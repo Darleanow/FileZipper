@@ -1,9 +1,10 @@
 ﻿cmake_minimum_required(VERSION 3.16)
 
-project(helloworld VERSION 1.0.0 LANGUAGES CXX)
+project(FileZipperApp VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 # Enforce strict coding standards and best practices
 if (MSVC)
@@ -23,16 +24,24 @@ endif()
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 qt_standard_project_setup()
 
-# Add subdirectory for Styles
+# Add subdirectory for Styles and CustomWidgets
 add_subdirectory(FileZipper/Styles)
 add_subdirectory(FileZipper/CustomWidgets)
 
-qt_add_executable(FileZipperApp
+
+# Add source files
+set(SOURCES
     FileZipper/FileZipperWindow.cpp
     FileZipper/main.cpp
+    resources.qrc
 )
 
-# Link Styles library
+# Add executable
+qt_add_executable(FileZipperApp
+    ${SOURCES}
+)
+
+# Link libraries
 target_link_libraries(FileZipperApp PRIVATE Qt6::Widgets CustomWidgets Styles)
 
 set_target_properties(FileZipperApp PROPERTIES

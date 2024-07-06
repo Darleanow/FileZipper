@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QIcon>
 #include <QPushButton>
 #include <QStyledItemDelegate>
 
@@ -13,13 +14,17 @@ class CListViewDelegate : public QStyledItemDelegate {
 
   void paint(QPainter* painter, const QStyleOptionViewItem& option,
              const QModelIndex& index) const override;
-
   bool editorEvent(QEvent* event, QAbstractItemModel* model,
                    const QStyleOptionViewItem& option,
                    const QModelIndex& index) override;
+  QSize sizeHint(const QStyleOptionViewItem& option,
+                 const QModelIndex& index) const override;
 
  signals:
   void signal_button_delete_clicked(const QModelIndex& index) const;
+
+ private:
+  QIcon m_icon_delete;
 };
 
 }  // namespace CWidgets

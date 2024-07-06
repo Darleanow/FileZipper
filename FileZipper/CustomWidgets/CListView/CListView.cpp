@@ -2,8 +2,6 @@
 
 #include <QDebug>
 
-#include "CListViewModel.h"
-
 namespace CWidgets {
 
 CListView::CListView(QWidget* parent)
@@ -15,13 +13,16 @@ CListView::CListView(QWidget* parent)
 
   connect(delegate, &CListViewDelegate::signal_button_delete_clicked, this,
           &CListView::removeItem);
+
+  // Set size policy to expand to fit content
+  setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+  setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+  setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 CListView::~CListView() = default;
 
-void CListView::addItem(const QString& text) {
-  model->addItem(text);
-}
+void CListView::addItem(const QString& text) { model->addItem(text); }
 
 void CListView::removeItem(const QModelIndex& index) {
   model->removeItem(index.row());
