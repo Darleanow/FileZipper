@@ -2,6 +2,12 @@
 
 #include <QString>
 
+QString Styles::default_window() {
+  return "QWidget {"
+         "background-color: #212529;"
+         "}";
+}
+
 QString Styles::default_button() {
   return "QPushButton {"
          "background-color: #343A40;"
@@ -10,10 +16,8 @@ QString Styles::default_button() {
          "padding: 15px 32px;"
          "text-align: center;"
          "text-decoration: none;"
-         "display: inline-block;"
          "font-size: 16px;"
          "margin: 4px 2px;"
-         "cursor: pointer;"
          "border-radius: 10px;"
          "border: 1px solid #6C757D;"
          "}"

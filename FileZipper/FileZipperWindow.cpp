@@ -19,6 +19,8 @@ FileZipperWindow::~FileZipperWindow() {}
 
 void FileZipperWindow::setup_ui() {
   m_central_widget = new QWidget(this);
+  m_central_widget->setStyleSheet(Styles::default_window());
+
   m_layout = new QVBoxLayout(m_central_widget);
 
   // Title
