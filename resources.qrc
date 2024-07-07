@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>icons/delete_icon.png</file>
+        <file>icons/FileZipper_logo.ico</file>
+        <file>icons/FileZipper_logo.png</file>
     </qresource>
 </RCC>
