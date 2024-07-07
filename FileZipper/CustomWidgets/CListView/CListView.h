@@ -15,6 +15,7 @@ class CListView : public QListView {
 
   void addItem(const QString& text);
   void removeItem(const QModelIndex& index);
+  CListViewModel* getModel();
 
  private:
   CListViewModel* model;

@@ -28,4 +28,6 @@ void CListView::removeItem(const QModelIndex& index) {
   model->removeItem(index.row());
 }
 
+CListViewModel* CListView::getModel() { return model; }
+
 }  // namespace CWidgets

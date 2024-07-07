@@ -27,6 +27,7 @@ qt_standard_project_setup()
 # Add subdirectory for Styles and CustomWidgets
 add_subdirectory(FileZipper/Styles)
 add_subdirectory(FileZipper/CustomWidgets)
+add_subdirectory(FileZipper/Utils)
 
 
 # Add source files
@@ -42,7 +43,7 @@ qt_add_executable(FileZipperApp
 )
 
 # Link libraries
-target_link_libraries(FileZipperApp PRIVATE Qt6::Widgets CustomWidgets Styles)
+target_link_libraries(FileZipperApp PRIVATE Qt6::Widgets CustomWidgets Styles Compressor)
 
 set_target_properties(FileZipperApp PROPERTIES
     WIN32_EXECUTABLE ON

@@ -59,7 +59,12 @@ After building the project, you can run the `filezipper` executable:
 
 ### Usage
 
-TODO
+To use the app, simply add files using the `Add Files` button:
+![addfiles](/icons/Files%20Added.png)
+Then, you can Zip them using the `Zip Files` button:
+![zipfiles](/icons/Zipped%20Files.png)
+Lastly, you can unzip it using the `Unzip Files` button:
+![unzip](/icons/UnZippedFiles.png)
 
 ## Contributing
 

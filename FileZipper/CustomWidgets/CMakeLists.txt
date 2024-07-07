@@ -1,4 +1,4 @@
-# Add the source and header files for the Styles library
+# Add the source and header files for the CustomWidgets library
 add_library(CustomWidgets STATIC
     CListView/CListView.cpp
     CListView/CListView.h
